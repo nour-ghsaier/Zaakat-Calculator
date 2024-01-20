@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?:ital@1&display=swap" rel="stylesheet">
+    <title>Zakat”Calculator:</title>
+    <link rel="stylesheet" href="calculator.component.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+ 
+
+<body>
+   <form [formGroup]="formulaire">
+    <div class="container">
+        <div class="banner input-field">
+            <div class="row">
+                <h2 class="banner-text">"In the Name of Allah, the Merciful, the Most Beneficent."</h2>
+            </div>
+            <div class="row">
+                <h2 class="mt-5 banner-text">“The wealth of a person does not decrease by paying Zakat” (Sahih Bukhari):
+                </h2>
+            </div>
+            <div class="row">
+                <h1>Zakat Calculator</h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="input-field">
+                        <div class="input-field-1">
+                            <div>
+                                <form [formGroup]="formulaire" autocomplete="off">
+                                    <div class="input-field-text">
+                                        <h1>Assets <span id="totle-g"></span></h1>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input id="input-1"  required="required"   formControlName="cachHome" >
+                                        <span>Enter Cash in Your Home: </span>   
+                                        <i></i>
+                                    </div>
+                                   
+                                    <div class="inputBox">
+                                        <input id="input-1" required="required"  class="formControl" formControlName="owedToYou"  >
+                                        <span>Enter money owed to you: </span>
+                                        <i></i>
+                                    
+                                    </div>
+                                    
+                                    <div class="inputBox">
+                                        <input id="input-1"  required="required"  class="formControl" formControlName="bankSaving">
+                                        <span>Enter bank saving:</span>
+                                        <i></i>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input id="input-1"  required="required" class="formControl" formControlName="otherAssets">
+                                        <span>Enter other assets:</span>
+                                        <i></i>
+                                    </div>
+                                    <div class="inputBox" >
+                                        <input id="input-2"  required="required" class="formControl" formControlName="Gold">
+                                        <span>Enter Gold:</span>
+                                        <i></i>
+                                    </div>
+                                     <div class="input-field-text" > 
+                                            <h3 >Total value of Gold:{{xValueGold|currency :'EUR'}} <span id="totle-g"></span></h3>
+                                        </div>
+                                    
+                                    <div class="inputBox">
+                                        <input id="input-3"  required="required"  class="formControl" formControlName="Silver">
+                                        <span>Enter Silver:</span>
+                                        <i></i>
+                                    </div>
+                                    <div class="input-field-text">
+                                        <h3>Total value of Silver:{{xValueSilver|currency :'EUR'}} <span id="totle-g"></span></h3>
+                                    </div>
+                                    <div class="input-field-text" >
+                                        <h3 >Total assets: {{result11|currency :'EUR'}}<span id="totle-g"></span></h3>
+                                    </div>
+                                    <div class="input-field-text">
+                                        <h1>Liabilities <span id="totle-g"></span></h1>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input id="input-2"  required="required"  class="formControl" formControlName="Liabilities">
+                                        <span>Enter debt you owe:</span>
+                                        <i></i>
+                                    </div>
+                                    <div>
+                                        <button class="glow-on-hover" type="button" (click)="onSubmit()" >calculate</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <div class="input-field-text">
+                               
+                                <h3>Total Amount is: {{amount|currency :'EUR'}}<span id="totle-a"></span></h3>
+
+                                <h3 *ngIf="!isValid">Total Zakat Amount is: {{totalZakaat|currency :'EUR'}}<span id="totle-z"></span></h3>
+                        
+  
+                            </div>
+                            <div *ngIf="!isValid">
+                                <button class="glow-on-hover mb-5" >
+                                    <a href="https://www.saylaniwelfare.com/en/donate" target="_blank">Donate now
+                                    </a>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+    <div>
+      
+
+      </div>
+    </form>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
